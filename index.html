@@ -147,6 +147,43 @@ content="width=device-width,initial-scale=1.0">
                 <h2>Find the Best Prices<br><span style="color: #ffd800;">in Ghana!</span></h2>
                  <p>Compare &bull; Save &bull; Shop smart</p>                                                                              
    </div>
+    <script>
+const products = [
+  { name: "Rice", price: "GH₵ 120" },
+  { name: "Cooking Oil", price: "GH₵ 85" },
+  { name: "Sugar", price: "GH₵ 45" },
+  { name: "Laptop", price: "GH₵ 2500" },
+  { name: "Shoes", price: "GH₵ 150" }
+];
+
+const searchInput = document.querySelector(
+  '.search-bar input'
+);
+
+const searchButton = document.querySelector(
+  '.search-bar button'
+);
+
+const results = document.getElementById(
+  'search-results'
+);
+
+function searchProducts() {
+  const searchTerm = searchInput.value.toLowerCase().trim();
+
+  const matches = products.filter(product =>
+    product.name.toLowerCase().includes(searchTerm)
+  );
+
+  results.innerHTML = matches.length
+    ? matches.map(product =>
+        `<p>${product.name} - ${product.price}</p>`
+      ).join('')
+    : '<p>No products found.</p>';
+}
+
+searchButton.addEventListener('click', searchProducts);
+</script>
 
             </body>
             </html>
