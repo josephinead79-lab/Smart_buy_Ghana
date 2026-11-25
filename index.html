@@ -1,401 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Buy Ghana | Buy Smart, Save More</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartBuy Ghana</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="app">
 
-<header class="header">
-
-    <div class="brand">
-        <div class="logo-icon">🛒</div>
-        <div>
-            <h1>Smart<span>Buy</span></h1>
-            <p>GHANA 🇬🇭</p>
+    <header class="header">
+      <div class="brand">
+        <span class="logo">🛒</span>
+        <div class="brand-text">
+          <h1>SmartBuy <span>Ghana</span></h1>
+          <p>Buy smart. Save more.</p>
         </div>
-    </div>
+        <span class="flag" aria-label="Ghana flag"></span>
+        <button class="bell" aria-label="Notifications">🔔<span class="badge">2</span></button>
+      </div>
 
-    <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#products">Products</a>
+      <form class="search" id="search-form">
+        <input type="text" id="search-input" placeholder="Search for a product..." />
+        <button type="submit" aria-label="Search">🔍</button>
+      </form>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-head">
+          <h2>Browse Categories</h2>
+          <a href="#">See all ›</a>
+        </div>
+        <div class="categories">
+          <!-- Later: replace each emoji with <img src="images/groceries.png" alt="Groceries" /> -->
+          <button class="category c-yellow" data-category="groceries"><span>🧺</span>Groceries</button>
+          <button class="category c-green" data-category="clothing"><span>👕</span>Clothing</button>
+          <button class="category c-pink" data-category="shoes"><span>👟</span>Shoes</button>
+          <button class="category c-rose" data-category="beauty"><span>💄</span>Beauty</button>
+          <button class="category c-purple" data-category="electronics"><span>📱</span>Electronics</button>
+        </div>
+      </section>
+
+      <section class="banner">
+        <div class="banner-text">
+          <h2>Find the Best Prices <strong>in Ghana!</strong></h2>
+          <p>Compare • Save • Shop Smart</p>
+        </div>
+        <!-- Later: add <img src="images/banner-woman.png" alt="" /> here -->
+        <div class="banner-image">🛍️</div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Popular Searches</h2>
+          <a href="#">See all ›</a>
+        </div>
+        <div class="chips" id="chips">
+          <button class="chip">🔍 Rice</button>
+          <button class="chip">🔍 Cooking Oil</button>
+          <button class="chip">🔍 Sugar</button>
+          <button class="chip">🔍 Milk</button>
+          <button class="chip">🔍 Tomato Paste</button>
+        </div>
+      </section>
+
+      <section id="results" class="results" hidden>
+        <h2 id="results-title"></h2>
+        <ul id="results-list"></ul>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="#" class="active"><span>🏠</span>Home</a>
+      <a href="#"><span>▦</span>Categories</a>
+      <a href="#"><span>♡</span>Favourites</a>
+      <a href="#"><span>👤</span>Profile</a>
     </nav>
 
-    <div class="header-icons">
-        <button class="icon-button" aria-label="Favorites">♡</button>
-        <button class="icon-button" aria-label="Shopping cart">🛒</button>
-    </div>
+  </div>
 
-</header>
-
-<main>
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-            <p class="welcome">WELCOME TO SMART BUY GHANA</p>
-
-            <h2>Find the best prices.<br>
-                <span>Save more money.</span>
-            </h2>
-
-            <p class="hero-text">
-                Compare prices, discover great deals
-                and shop smarter every day.
-            </p>
-
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="search-input"
-                    placeholder="Search for rice, phones, shoes..."
-                >
-
-                <button id="search-button">🔍</button>
-            </div>
-
-            <p class="hero-small">Buy smart. Save more. 🇬🇭</p>
-        </div>
-
-        <div class="hero-decoration">
-            <div class="shopping-circle">🛍️</div>
-            <div class="discount-circle">%</div>
-            <div class="gold-circle"></div>
-        </div>
-
-    </section>
-
-
-    <section class="section" id="categories">
-
-        <div class="section-heading">
-            <div>
-                <p class="small-heading">EXPLORE</p>
-                <h2>Browse Categories</h2>
-            </div>
-
-            <a href="#products" class="see-all">See all →</a>
-        </div>
-
-        <div class="categories">
-
-            <button class="category-card groceries" data-category="Groceries">
-                <span class="category-icon">🛒</span>
-                <span>Groceries</span>
-            </button>
-
-            <button class="category-card clothing" data-category="Clothing">
-                <span class="category-icon">👕</span>
-                <span>Clothing</span>
-            </button>
-
-            <button class="category-card shoes" data-category="Shoes">
-                <span class="category-icon">👟</span>
-                <span>Shoes</span>
-            </button>
-
-            <button class="category-card beauty" data-category="Beauty">
-                <span class="category-icon">💄</span>
-                <span>Beauty</span>
-            </button>
-
-            <button class="category-card electronics" data-category="Electronics">
-                <span class="category-icon">📱</span>
-                <span>Electronics</span>
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section class="promo-banner">
-
-        <div class="promo-text">
-            <p>SHOP SMARTER EVERY DAY</p>
-
-            <h2>Find the Best Prices<br>
-                <span>in Ghana!</span>
-            </h2>
-
-            <p>Compare <span>•</span> Save <span>•</span> Shop Smart</p>
-
-        </div>
-
-        <div class="promo-emoji">
-            🛍️
-            <span>💰</span>
-        </div>
-
-    </section>
-
-
-    <section class="section popular-section">
-
-        <div class="section-heading">
-            <div>
-                <p class="small-heading">TRENDING</p>
-                <h2>Popular Searches</h2>
-            </div>
-        </div>
-
-        <div class="popular-searches">
-
-            <button class="search-chip">🔍 Rice</button>
-            <button class="search-chip">🔍 Cooking Oil</button>
-            <button class="search-chip">🔍 Sugar</button>
-            <button class="search-chip">🔍 Milk</button>
-            <button class="search-chip">🔍 Tomato Paste</button>
-
-        </div>
-
-    </section>
-
-
-    <section class="section products-section" id="products">
-
-        <div class="section-heading">
-            <div>
-                <p class="small-heading">HANDPICKED FOR YOU</p>
-                <h2>Popular Products</h2>
-            </div>
-
-            <a href="#products" class="see-all">See all →</a>
-        </div>
-
-        <div id="search-message"></div>
-
-        <div class="product-grid" id="product-list"></div>
-
-    </section>
-
-</main>
-
-
-<footer>
-
-    <div class="footer-brand">
-        Smart<span>Buy</span> Ghana 🇬🇭
-    </div>
-
-    <p>Buy smart. Save more.</p>
-
-    <p class="copyright">
-        © 2026 Smart Buy Ghana. All rights reserved.
-    </p>
-
-</footer>
-
-
-<script>
-
-const products = [
-    {
-        name: "Premium Rice",
-        price: "GH₵ 120",
-        category: "Groceries",
-        emoji: "🍚",
-        description: "Quality rice for your home"
-    },
-
-    {
-        name: "Cooking Oil",
-        price: "GH₵ 85",
-        category: "Groceries",
-        emoji: "🫒",
-        description: "Everyday cooking essential"
-    },
-
-    {
-        name: "Sugar",
-        price: "GH₵ 45",
-        category: "Groceries",
-        emoji: "🍚",
-        description: "Sweeten your everyday"
-    },
-
-    {
-        name: "Stylish T-Shirt",
-        price: "GH₵ 65",
-        category: "Clothing",
-        emoji: "👕",
-        description: "Comfortable everyday wear"
-    },
-
-    {
-        name: "Casual Sneakers",
-        price: "GH₵ 150",
-        category: "Shoes",
-        emoji: "👟",
-        description: "Style and comfort"
-    },
-
-    {
-        name: "Beauty Set",
-        price: "GH₵ 95",
-        category: "Beauty",
-        emoji: "💄",
-        description: "Your beauty essentials"
-    },
-
-    {
-        name: "Smartphone",
-        price: "GH₵ 1500",
-        category: "Electronics",
-        emoji: "📱",
-        description: "Smart technology"
-    },
-
-    {
-        name: "Wireless Headphones",
-        price: "GH₵ 250",
-        category: "Electronics",
-        emoji: "🎧",
-        description: "Enjoy your favourite music"
-    }
-];
-
-
-const productList = document.getElementById("product-list");
-const searchInput = document.getElementById("search-input");
-const searchButton = document.getElementById("search-button");
-const searchMessage = document.getElementById("search-message");
-
-
-function displayProducts(items) {
-
-    productList.innerHTML = "";
-
-    if (items.length === 0) {
-
-        searchMessage.innerHTML =
-            "<p class='no-results'>Sorry, no products found. Try another search.</p>";
-
-        return;
-    }
-
-    searchMessage.innerHTML = "";
-
-    items.forEach(function(product) {
-
-        const card = document.createElement("div");
-
-        card.className = "product-card";
-
-        card.innerHTML = `
-            <div class="product-image">
-                <span>${product.emoji}</span>
-                <button class="favorite-button">♡</button>
-            </div>
-
-            <div class="product-info">
-                <p class="product-category">${product.category}</p>
-
-                <h3>${product.name}</h3>
-
-                <p class="product-description">
-                    ${product.description}
-                </p>
-
-                <div class="product-bottom">
-                    <strong>${product.price}</strong>
-                    <button class="view-button">View</button>
-                </div>
-            </div>
-        `;
-
-        productList.appendChild(card);
-
-    });
-
-}
-
-
-function searchProducts() {
-
-    const searchTerm = searchInput.value.toLowerCase().trim();
-
-    if (searchTerm === "") {
-
-        displayProducts(products);
-
-        searchMessage.innerHTML =
-            "<p class='no-results'>Type a product name to search.</p>";
-
-        return;
-    }
-
-    const matches = products.filter(function(product) {
-
-        return product.name.toLowerCase().includes(searchTerm)
-        || product.category.toLowerCase().includes(searchTerm);
-
-    });
-
-    displayProducts(matches);
-
-}
-
-
-searchButton.addEventListener("click", searchProducts);
-
-
-searchInput.addEventListener("keydown", function(event) {
-
-    if (event.key === "Enter") {
-        searchProducts();
-    }
-
-});
-
-
-document.querySelectorAll(".search-chip").forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        searchInput.value = button.textContent.replace("🔍", "").trim();
-
-        searchProducts();
-
-        document.getElementById("products").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-
-});
-
-
-document.querySelectorAll(".category-card").forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        const category = button.dataset.category;
-
-        const matches = products.filter(function(product) {
-            return product.category === category;
-        });
-
-        searchInput.value = category;
-
-        displayProducts(matches);
-
-        document.getElementById("products").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-
-});
-
-
-displayProducts(products);
-
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
